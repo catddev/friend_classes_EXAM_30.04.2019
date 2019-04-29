@@ -1,6 +1,4 @@
 ﻿#pragma once
-#include<iostream>;
-#include<string>
 #include"Exam.h"
 
 //Ход решении задачи :
@@ -23,4 +21,17 @@
 
 //В классе «СТУДЕНТ» и «ПРЕПОДАВАТЕЛЬ» необходимо указать, что КЛАСС «ЭКЗАМЕН» является дружественным К НИМ
 
+class Exam;
+class Student {
+private:
+	string name;
+	int age;
+	string gender;
+	string group;
+public:
+	Student();
+	Student(string gender, string group);
+	Student(const Student &obj);
 
+	friend Exam;
+};

@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include<iostream>
+#include<string>
 #include"Student.h"
 #include"Tutor.h"
 
@@ -19,3 +21,17 @@ using namespace std;
 
 //3.1.Необходимо создать следующие функции
 //• Дружеская функцию, принимает массив объектов класса «экзамен» и выводит информацию об экзамене на консоль.
+
+class Student;
+class Tutor;
+class Exam {
+private:
+	string subject;
+	string tname;
+	string sname;
+	double mark;
+public:
+	Exam();
+	Exam(string subject, double mark);
+	Exam(const Exam& obj);
+};

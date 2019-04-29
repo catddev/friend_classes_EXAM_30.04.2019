@@ -20,3 +20,20 @@
 
 //В классе «СТУДЕНТ» и «ПРЕПОДАВАТЕЛЬ» необходимо указать, что КЛАСС «ЭКЗАМЕН» является дружественным К НИМ
 
+class Exam;
+class Tutor {
+private:
+	string name;
+	int age;
+	string gender;
+	string kaf;
+public:
+	Tutor();
+	Tutor(int age, string kaf);
+	Tutor(const Tutor& obj);
+
+	friend Exam;
+};
+
+bool operator>(Tutor t2);
+bool operator<(Tutor t2);
