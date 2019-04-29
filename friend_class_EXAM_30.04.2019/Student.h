@@ -34,4 +34,9 @@ public:
 	Student(const Student &obj);
 
 	friend Exam;
+
+	friend istream& operator>>(istream& is, Student & obj);
+	friend ostream& operator<<(ostream& os, Student obj);
 };
+istream& operator>>(istream& is, Student & obj);
+ostream& operator<<(ostream& os, Student obj);

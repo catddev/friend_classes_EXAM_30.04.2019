@@ -34,4 +34,9 @@ public:
 	Exam();
 	Exam(string subject, double mark);
 	Exam(const Exam& obj);
+
+	friend istream& operator>>(istream& is, Exam & obj);
+	friend ostream& operator<<(ostream& os, Exam obj);
 };
+istream& operator>>(istream& is, Exam & obj);
+ostream& operator<<(ostream& os, Exam obj);

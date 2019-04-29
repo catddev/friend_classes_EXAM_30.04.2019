@@ -21,3 +21,15 @@ Tutor::Tutor(const Tutor & obj)
 	gender = obj.gender;
 	kaf = obj.kaf;
 }
+
+istream & operator>>(istream & is, Tutor & obj)
+{
+	is >> obj.name >> obj.age >> obj.gender >> obj.kaf;
+	return is;
+}
+
+ostream & operator<<(ostream & os, Tutor obj)
+{
+	os << obj.name << " " << obj.age << " " << obj.gender << " " << obj.kaf << endl;
+	return os;
+}

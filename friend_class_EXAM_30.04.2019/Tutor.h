@@ -33,7 +33,15 @@ public:
 	Tutor(const Tutor& obj);
 
 	friend Exam;
-};
 
-bool operator>(Tutor t2);
-bool operator<(Tutor t2);
+	friend istream& operator>>(istream& is, Tutor & obj);
+	friend ostream& operator<<(ostream& os, Tutor obj);
+
+	friend bool operator>(Tutor obj);
+	friend Tutor operator<(Tutor obj);
+};
+istream& operator>>(istream& is, Tutor & obj);
+ostream& operator<<(ostream& os, Tutor obj);
+
+bool operator>(Tutor obj);
+Tutor operator<(Tutor obj);
