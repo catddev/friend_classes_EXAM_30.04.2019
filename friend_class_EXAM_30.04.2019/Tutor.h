@@ -37,8 +37,10 @@ public:
 	friend istream& operator>>(istream& is, Tutor & obj);
 	friend ostream& operator<<(ostream& os, Tutor obj);
 
-	friend bool operator>(Tutor obj);
-	friend Tutor operator<(Tutor obj);
+	bool operator>(Tutor obj);
+	bool operator<(Tutor obj);
+	bool operator==(Tutor obj);
+	bool operator!=(Tutor obj);
 };
 istream& operator>>(istream& is, Tutor & obj);
 ostream& operator<<(ostream& os, Tutor obj);

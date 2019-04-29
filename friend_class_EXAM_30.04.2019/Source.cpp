@@ -26,6 +26,7 @@ int main() {
 	Student ss[8];
 	Tutor ts[2];
 	Exam exs[16];
+	string str;
 
 	while (true) {
 		int choice;
@@ -63,6 +64,7 @@ int main() {
 			
 			break;
 		case 4:
+			cin >> str;
 			
 			break;
 		case 5:
@@ -72,7 +74,8 @@ int main() {
 			
 			break;
 		case 7:
-			
+			cin >> str;
+
 			break;
 		case 8:
 			
