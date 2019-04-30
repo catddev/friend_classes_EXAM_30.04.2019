@@ -1,6 +1,9 @@
 ﻿#pragma once
-#include"Exam.h"
 
+#include<iostream>
+#include<string>
+#include"Exam.h"
+using namespace std;
 //Ход решении задачи :
 //1. Необходимо создать класс «студент»
 //который должен содержать следующие поля :
@@ -31,12 +34,15 @@ private:
 public:
 	Student();
 	Student(string gender, string group);
-	Student(const Student &obj);
+	string getName();
 
 	friend Exam;
 
 	friend istream& operator>>(istream& is, Student & obj);
 	friend ostream& operator<<(ostream& os, Student obj);
+
+	friend bool operator!=(const Student& obj, string gender);
+	friend bool operator==(const Student& obj, string group);
 };
 istream& operator>>(istream& is, Student & obj);
 ostream& operator<<(ostream& os, Student obj);

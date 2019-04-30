@@ -26,7 +26,6 @@ int main() {
 	Student ss[8];
 	Tutor ts[2];
 	Exam exs[16];
-	string str;
 
 	while (true) {
 		int choice;
@@ -36,7 +35,7 @@ int main() {
 		cout << " Enter 4 to get students by group" << endl;
 		cout << " Enter 5 to get the youngest tutor" << endl;
 		cout << " Enter 6 to get the eldest tutor" << endl;
-		cout << " Enter 7 to get tutors by their pulpit" << endl;
+		cout << " Enter 7 to get tutors by their department" << endl;
 		cout << " Enter 8 to print out info on exam mark 5" << endl;
 		cout << " Enter 9 to print out info on exam mark 2 and lower" << endl;
 		cout << " Enter 10 to print out info about all the students/tutors/exams" << endl;
@@ -53,37 +52,84 @@ int main() {
 			for (int i = 0; i < 2; i++)
 				in_file >> ts[i];
 
-			for (int i = 0; i < 16; i++)
-				in_file >> exs[i];
+			for (int i = 0; i < 8; i++) {
+
+				double grade = rand() % 4 + 2;
+				exs[i].createExam("C++", grade, ss[i], ts[0]);
+			}
+			for (int i = 8; i < 16; i++) {
+
+				double grade = rand() % 4 + 2;
+				exs[i].createExam("ITE", grade, ss[i-8], ts[1]);
+			}
 
 			break;
 		case 2:
-			
+			for (int i = 0; i < 8; i++)
+				if (ss[i] != "female")
+					cout << ss[i];
 			break;
 		case 3:
-			
+			for (int i = 0; i < 8; i++)
+				if (ss[i] != "male")
+					cout << ss[i];
 			break;
 		case 4:
-			cin >> str;
+			for (int i = 0; i < 8; i++)
+				if (ss[i] == "SMD")
+					cout << ss[i];
+
+			for (int i = 0; i < 8; i++)
+				if (ss[i] == "SMP")
+					cout << ss[i];
 			
 			break;
 		case 5:
-			
+			cout << "younger tutor: ";
+			if (ts[0] < ts[1])
+				cout << ts[0];
+			else cout << ts[1];
 			break;
 		case 6:
-			
+			cout << "elder tutor: ";
+			if (ts[0] > ts[1])
+				cout << ts[0];
+			else cout << ts[1];
 			break;
 		case 7:
-			cin >> str;
-
+			cout << "IT department" << endl;
+			for (int i = 0; i < 2; i++)
+				if (ts[i] == "IT")
+					cout << ts[i];
 			break;
 		case 8:
-			
+			for (int i = 0; i < 16; i++) {
+				if (exs[i].getMark() == 5)
+					for (int j = 0; j < 8; j++) {
+						if (ss[j].getName() == exs[i].getSname())
+							cout << exs[i].getSname() << endl
+							<< "mark: " << exs[i].getMark() << endl
+							<< "Tutor: " << exs[i].getTname() << endl
+							<< "Subject: " << exs[i].getSubject() << endl << endl;
+					}
+			}		
 			break;
 		case 9:
-
+			for (int i = 0; i < 16; i++) {
+				if (exs[i].getMark() <=2)
+					for (int j = 0; j < 8; j++) {
+						if (ss[j].getName() == exs[i].getSname())
+							cout << exs[i].getSname() << endl
+							<< "mark: " << exs[i].getMark() << endl
+							<< "Tutor: " << exs[i].getTname() << endl
+							<< "Subject: " << exs[i].getSubject() << endl << endl;
+					}
+			}
 			break;
 		case 10:
+			cout << " Enter 1 to get info on students" << endl;
+			cout << " Enter 2 to get info on tutors" << endl;
+			cout << " Enter 3 to get info on exams" << endl;
 			int x;
 			cin >> x;
 			if(x==1)
@@ -100,9 +146,6 @@ int main() {
 			break;
 		}
 	}
-
-
-
 
 	system("pause");
 	return 0;

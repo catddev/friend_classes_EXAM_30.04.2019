@@ -4,22 +4,21 @@ Student::Student()
 {
 	name = "";
 	age = 0;
-	gender = "";
+	gender = "male";
 	group = "";
 }
 
 Student::Student(string gender, string group)
 {
+	name = "";
+	age = 0;
 	this->gender = gender;
 	this->group = group;
 }
 
-Student::Student(const Student & obj)
+string Student::getName()
 {
-	name = obj.name;
-	age = obj.age;
-	gender = obj.gender;
-	group = obj.group;
+	return name;
 }
 
 istream & operator>>(istream & is, Student & obj)
@@ -32,4 +31,14 @@ ostream & operator<<(ostream & os, Student obj)
 {
 	os << obj.name << " " << obj.age << " " << obj.gender << " " << obj.group << endl;
 	return os;
+}
+
+bool operator!=(const Student & obj, string gender)
+{
+	return (obj.gender!=gender);
+}
+
+bool operator==(const Student & obj, string group)
+{
+	return (obj.group==group);
 }

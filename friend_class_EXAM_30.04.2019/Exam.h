@@ -33,10 +33,16 @@ private:
 public:
 	Exam();
 	Exam(string subject, double mark);
-	Exam(const Exam& obj);
+	Exam(Student s, Tutor t);
+	Exam createExam(string subject, double mark, Student s, Tutor t);
+	double getMark();
+	string getSname();
+	string getTname();
+	string getSubject();
 
 	friend istream& operator>>(istream& is, Exam & obj);
 	friend ostream& operator<<(ostream& os, Exam obj);
 };
 istream& operator>>(istream& is, Exam & obj);
 ostream& operator<<(ostream& os, Exam obj);
+

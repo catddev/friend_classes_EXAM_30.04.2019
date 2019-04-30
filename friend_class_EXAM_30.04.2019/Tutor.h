@@ -1,6 +1,8 @@
 ﻿#pragma once
+#include<iostream>
+#include<string>
 #include"Exam.h"
-
+using namespace std;
 //2. Необходимо создать класс «преподаватель»
 //который должен содержать следующие поля :
 //а) Фамилия
@@ -26,24 +28,21 @@ private:
 	string name;
 	int age;
 	string gender;
-	string kaf;
+	string dep;
 public:
 	Tutor();
 	Tutor(int age, string kaf);
-	Tutor(const Tutor& obj);
 
 	friend Exam;
 
 	friend istream& operator>>(istream& is, Tutor & obj);
 	friend ostream& operator<<(ostream& os, Tutor obj);
 
-	bool operator>(Tutor obj);
-	bool operator<(Tutor obj);
-	bool operator==(Tutor obj);
-	bool operator!=(Tutor obj);
+	friend bool operator>(const Tutor& t1, const Tutor& t2);
+	friend bool operator<(const Tutor& t1, const Tutor& t2);
+	friend bool operator==(const Tutor& t1, string dep);
+
 };
 istream& operator>>(istream& is, Tutor & obj);
 ostream& operator<<(ostream& os, Tutor obj);
 
-bool operator>(Tutor obj);
-Tutor operator<(Tutor obj);

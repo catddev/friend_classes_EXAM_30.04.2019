@@ -4,32 +4,41 @@ Tutor::Tutor()
 {
 	name = "";
 	age = 0;
-	gender = "";
-	kaf = "";
+	gender = "male";
+	dep = "IT";
 }
 
-Tutor::Tutor(int age, string kaf)
+Tutor::Tutor(int age, string dep)
 {
+	name = "";
 	this->age = age;
-	this->kaf = kaf;
-}
-
-Tutor::Tutor(const Tutor & obj)
-{
-	name = obj.name;
-	age = obj.age;
-	gender = obj.gender;
-	kaf = obj.kaf;
+	gender = "male";
+	this->dep = dep;
 }
 
 istream & operator>>(istream & is, Tutor & obj)
 {
-	is >> obj.name >> obj.age >> obj.gender >> obj.kaf;
+	is >> obj.name >> obj.age >> obj.gender >> obj.dep;
 	return is;
 }
 
 ostream & operator<<(ostream & os, Tutor obj)
 {
-	os << obj.name << " " << obj.age << " " << obj.gender << " " << obj.kaf << endl;
+	os << obj.name << " " << obj.age << " " << obj.gender << " " << obj.dep << endl;
 	return os;
+}
+
+bool operator>(const Tutor & t1, const Tutor & t2)
+{
+	return (t1.age>t2.age);
+}
+
+bool operator<(const Tutor & t1, const Tutor & t2)
+{
+	return (t1.age < t2.age);
+}
+
+bool operator==(const Tutor & t, string dep)
+{
+	return (t.dep == dep);
 }
