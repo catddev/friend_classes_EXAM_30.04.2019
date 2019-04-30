@@ -4,7 +4,7 @@
 #include"Student.h"
 #include"Tutor.h"
 
-using namespace std;
+using namespace std;//в каждом .h прописать
 
 //3. Необходимо создать класс «экзамен»
 //который должен содержать следующие поля :

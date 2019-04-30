@@ -1,9 +1,7 @@
 ﻿#pragma once
-
-#include<iostream>
-#include<string>
 #include"Exam.h"
-using namespace std;
+using namespace std; //в каждом .h прописать
+
 //Ход решении задачи :
 //1. Необходимо создать класс «студент»
 //который должен содержать следующие поля :

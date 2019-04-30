@@ -1,8 +1,7 @@
 ﻿#pragma once
-#include<iostream>
-#include<string>
 #include"Exam.h"
-using namespace std;
+using namespace std;//в каждом .h прописать
+
 //2. Необходимо создать класс «преподаватель»
 //который должен содержать следующие поля :
 //а) Фамилия
