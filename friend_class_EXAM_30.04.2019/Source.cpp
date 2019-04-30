@@ -104,13 +104,13 @@ int main() {
 			break;
 		case 8:
 			for (int i = 0; i < 16; i++) {
-				if (exs[i].getMark() == 5)
+				if (exs[i].getMark() == 5)//чтобы обращаться к ПРИВАТНЫМ свойствам, нужно в классах отдельно прописать методы, которые будут возвращать значение нужного нам приватного свойства
 					for (int j = 0; j < 8; j++) {
-						if (ss[j].getName() == exs[i].getSname())
+						if (ss[j].getName() == exs[i].getSname())//и здесь
 							cout << exs[i].getSname() << endl
-							<< "mark: " << exs[i].getMark() << endl
-							<< "Tutor: " << exs[i].getTname() << endl
-							<< "Subject: " << exs[i].getSubject() << endl << endl;
+							<< "mark: " << exs[i].getMark() << endl//и здесь
+							<< "Tutor: " << exs[i].getTname() << endl//и здесь
+							<< "Subject: " << exs[i].getSubject() << endl << endl;//и здесь
 					}
 			}		
 			break;
